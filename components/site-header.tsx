@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Menu, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { GlowingButton } from "@/components/glowing-button"
 
 export function SiteHeader() {
@@ -77,6 +77,7 @@ export function SiteHeader() {
               side="right"
               className="border-blue-500/20 bg-background/95 backdrop-blur-lg w-[80vw] max-w-[300px]"
             >
+              <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
               <div className="px-7">
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                   <Code className="h-6 w-6 text-blue-500" />
