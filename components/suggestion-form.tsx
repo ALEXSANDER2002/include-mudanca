@@ -84,7 +84,7 @@ export function SuggestionForm() {
           id="email"
           name="email"
           type="email"
-          placeholder="seu.email@universidade.edu"
+          placeholder="seu.email@unifesspa.edu.br"
           value={formState.email}
           onChange={handleChange}
           required

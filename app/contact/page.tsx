@@ -65,8 +65,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base">
-                <a href="mailto:contato@includemudanca.edu" className="hover:text-primary">
-                  contato@includemudanca.edu
+                <a href="mailto:caencunifesspa@gmail.com" className="hover:text-primary">
+                caencunifesspa@gmail.com
                 </a>
               </CardDescription>
             </CardContent>
@@ -78,8 +78,8 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base">
-                <a href="tel:+551234567890" className="hover:text-primary">
-                  +55 (12) 3456-7890
+                <a href="tel:+55 (94) 9276-0247" className="hover:text-primary">
+                +55 (94) 9276-0247
                 </a>
               </CardDescription>
             </CardContent>
@@ -91,9 +91,9 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-base">
-                Prédio de Engenharia de Computação, Sala 101
+                bloco 5
                 <br />
-                Campus Universitário, 12345-678
+                Campus 2
               </CardDescription>
             </CardContent>
           </Card>

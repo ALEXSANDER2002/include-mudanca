@@ -17,26 +17,9 @@ export function SiteFooter() {
             engenharia de computação.
           </p>
           <div className="flex gap-3 md:gap-4">
+           
             <Link
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md p-2 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500"
-            >
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md p-2 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500"
-            >
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </Link>
-            <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/caenc.unifesspa/"
               target="_blank"
               rel="noreferrer"
               className="rounded-md p-2 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500"
@@ -44,15 +27,7 @@ export function SiteFooter() {
               <Instagram className="h-5 w-5" />
               <span className="sr-only">Instagram</span>
             </Link>
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md p-2 text-muted-foreground hover:bg-blue-500/10 hover:text-blue-500"
-            >
-              <Linkedin className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
+           
           </div>
         </div>
         <div>
@@ -68,11 +43,7 @@ export function SiteFooter() {
                 Sobre Nós
               </Link>
             </li>
-            <li>
-              <Link href="/projects" className="text-muted-foreground hover:text-blue-500">
-                Projetos
-              </Link>
-            </li>
+            
             <li>
               <Link href="/contact" className="text-muted-foreground hover:text-blue-500">
                 Contato
@@ -85,22 +56,22 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li className="flex items-start gap-2">
               <span className="text-blue-500">📧</span>
-              <a href="mailto:contato@includemudanca.edu" className="text-muted-foreground hover:text-blue-500">
-                contato@includemudanca.edu
+              <a href="mailto:caencunifesspa@gmail.com" className="text-muted-foreground hover:text-blue-500">
+              caencunifesspa@gmail.com
               </a>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-blue-500">📱</span>
               <a href="tel:+551234567890" className="text-muted-foreground hover:text-blue-500">
-                +55 (12) 3456-7890
+                +55 (94) 9276-0247
               </a>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-blue-500">📍</span>
               <span className="text-muted-foreground">
-                Prédio de Engenharia de Computação, Sala 101
+                Bloco 5
                 <br />
-                Campus Universitário, 12345-678
+                Campus II, 68505-080
               </span>
             </li>
           </ul>
@@ -128,4 +99,3 @@ export function SiteFooter() {
     </footer>
   )
 }
-

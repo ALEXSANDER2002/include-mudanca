@@ -15,11 +15,20 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['images.unsplash.com'],
   },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+  },
+  devIndicators: {
+    buildActivity: false,
+    buildActivityPosition: 'bottom-right',
+  },
+  staticPageGenerationTimeout: 1000,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
 }
 

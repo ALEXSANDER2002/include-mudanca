@@ -24,11 +24,7 @@ export function SiteHeader() {
       label: "Sobre Nós",
       active: pathname === "/about",
     },
-    {
-      href: "/projects",
-      label: "Projetos",
-      active: pathname === "/projects",
-    },
+   
     {
       href: "/contact",
       label: "Contato",

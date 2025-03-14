@@ -96,7 +96,7 @@ export default function HomePage() {
                   <div className="relative h-[300px] w-[300px] sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px] rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-sm">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Image
-                        src="/placeholder.svg?height=400&width=400&text=CAEC"
+                        src="/faz o M (6).png"
                         alt="Centro Acadêmico de Engenharia de Computação"
                         width={400}
                         height={400}
@@ -124,138 +124,229 @@ export default function HomePage() {
       </section>
 
       {/* Sobre a Chapa */}
-      <section className="py-16 md:py-24">
-        <div className="container px-4">
-          <div className="mx-auto max-w-[800px] text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Quem Somos</h2>
-              <p className="mt-4 text-muted-foreground md:text-xl">
-                Conheça a chapa #INCLUDE &lt;MUDANÇA&gt; e nossa visão para o Centro Acadêmico
-              </p>
-            </motion.div>
-          </div>
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-900/20 opacity-30"></div>
+        
+        {/* Partículas decorativas */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <div 
+              key={i}
+              className="absolute rounded-full bg-blue-500/20 blur-xl"
+              style={{
+                width: `${Math.random() * 100 + 50}px`,
+                height: `${Math.random() * 100 + 50}px`,
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.3,
+                animation: `float ${Math.random() * 10 + 10}s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 5}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        <div className="container px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mx-auto max-w-[800px] text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+              Quem Somos
+            </h2>
+            <p className="mt-4 text-muted-foreground md:text-xl">
+              Conheça a chapa #INCLUDE &lt;MUDANÇA&gt; e nossa visão para o Centro Acadêmico
+            </p>
+          </motion.div>
 
           <div className="relative mx-auto max-w-[1100px] mb-16">
             {/* Background decorativo */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/5 via-orange-500/5 to-blue-500/5 rounded-3xl"></div>
+            <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-orange-500/10 rounded-3xl backdrop-blur-sm border border-blue-500/20"></div>
 
             {/* Grid de membros da equipe */}
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 lg:gap-12 p-4 md:p-8">
               {/* Primeira linha - Presidente e Vice */}
               <div className="col-span-2 md:col-span-4 flex justify-center gap-4 md:gap-8 lg:gap-16 mb-4 md:mb-8">
-                <TeamMember
-                  name="Alexsander"
-                  role="Presidente"
-                  image="/placeholder.svg?height=200&width=200&text=Alexsander"
-                  delay={0.1}
-                />
-                <TeamMember
-                  name="Kalleb"
-                  role="Vice"
-                  image="/placeholder.svg?height=200&width=200&text=Kalleb"
-                  delay={0.2}
-                />
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <TeamMember
+                    name="Alexsander"
+                    role="Presidente"
+                    image="/alex.jpeg"
+                    delay={0.1}
+                  />
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <TeamMember
+                    name="Kalleb"
+                    role="Vice"
+                    image="/kaleb.jpeg"
+                    delay={0.2}
+                  />
+                </motion.div>
               </div>
 
               {/* Segunda linha - 4 membros */}
-              <TeamMember
-                name="Murilo"
-                role="Tesoureiro"
-                image="/placeholder.svg?height=200&width=200&text=Murilo"
-                delay={0.3}
-              />
-              <TeamMember
-                name="Carlos"
-                role="Comunicação"
-                image="/placeholder.svg?height=200&width=200&text=Carlos"
-                delay={0.4}
-              />
-              <TeamMember
-                name="Gustavo"
-                role="Marketing"
-                image="/placeholder.svg?height=200&width=200&text=Gustavo"
-                delay={0.5}
-              />
-              <TeamMember
-                name="Lívia"
-                role="Marketing"
-                image="/placeholder.svg?height=200&width=200&text=Livia"
-                delay={0.6}
-              />
+              {[
+                { name: "Murilo", role: "Tesoureiro", image: "/murilo.jpeg", delay: 0.3 },
+                { name: "Carlos", role: "Comunicação", image: "/carlosss.jpg", delay: 0.4 },
+                { name: "Gustavo", role: "Marketing", image: "/gustacvo.jpeg", delay: 0.5 },
+                { name: "Lívia", role: "Marketing", image: "/livia.jpeg", delay: 0.6 }
+              ].map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <TeamMember
+                    name={member.name}
+                    role={member.role}
+                    image={member.image}
+                    delay={member.delay}
+                  />
+                </motion.div>
+              ))}
 
               {/* Terceira linha - 4 membros */}
-              <TeamMember
-                name="Ane Saraiva"
-                role="Eventos e Cultura"
-                image="/placeholder.svg?height=200&width=200&text=Ane"
-                delay={0.7}
-              />
-              <TeamMember
-                name="Yasmim"
-                role="Eventos e Cultura"
-                image="/placeholder.svg?height=200&width=200&text=Yasmim"
-                delay={0.8}
-              />
-              <TeamMember
-                name="Lincoln"
-                role="Projetos"
-                image="/placeholder.svg?height=200&width=200&text=Lincoln"
-                delay={0.9}
-              />
-              <TeamMember
-                name="Gabriel"
-                role="Projetos"
-                image="/placeholder.svg?height=200&width=200&text=Gabriel"
-                delay={1.0}
-              />
+              {[
+                { name: "Ane Saraiva", role: "Eventos e Cultura", image: "/ane.jpeg", delay: 0.7 },
+                { name: "Yasmim", role: "Eventos e Cultura", image: "/yasmin.jpeg", delay: 0.8 },
+                { name: "Lincoln", role: "Projetos", image: "/lincum.jpeg", delay: 0.9 },
+                { name: "Gabriel", role: "Projetos", image: "/martins.jpeg", delay: 1.0 }
+              ].map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <TeamMember
+                    name={member.name}
+                    role={member.role}
+                    image={member.image}
+                    delay={member.delay}
+                  />
+                </motion.div>
+              ))}
 
               {/* Quarta linha - 2 membros centralizados */}
               <div className="col-span-2 md:col-span-4 flex justify-center gap-4 md:gap-8 lg:gap-16 mt-4 md:mt-8">
-                <TeamMember
-                  name="Helton"
-                  role="Secretário Geral"
-                  image="/placeholder.svg?height=200&width=200&text=Helton"
-                  delay={1.1}
-                />
-                <TeamMember
-                  name="Elson"
-                  role="Diretor Acadêmico"
-                  image="/placeholder.svg?height=200&width=200&text=Elson"
-                  delay={1.2}
-                />
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <TeamMember
+                    name="Helton"
+                    role="Secretário Geral"
+                    image="/elton.jpeg"
+                    delay={1.1}
+                  />
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <TeamMember
+                    name="Elson"
+                    role="Diretor Acadêmico"
+                    image="/elson.jpeg"
+                    delay={1.2}
+                  />
+                </motion.div>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto max-w-[800px] text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="space-y-6"
-            >
-              <h3 className="text-2xl font-bold">Nossa Missão</h3>
-              <p className="text-muted-foreground">
-                A chapa #INCLUDE &lt;MUDANÇA&gt; representa uma visão coletiva para o futuro do Centro Acadêmico de
-                Engenharia de Computação. Nosso nome, que combina a diretiva include do C++ com a palavra "mudança",
-                reflete nosso compromisso com a inclusividade e a transformação na educação em engenharia de computação.
-              </p>
-              <div className="pt-4">
-                <GlowingButton asChild>
-                  <Link href="/about">
-                    Conheça Mais Sobre Nossa Equipe <ChevronRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </GlowingButton>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mx-auto max-w-[800px] text-center"
+          >
+            <div className="relative overflow-hidden bg-blue-950/40 backdrop-blur-sm p-8 md:p-10 rounded-2xl border border-blue-500/30 shadow-[0_0_15px_rgba(0,119,255,0.15)]">
+              {/* Elementos decorativos */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-orange-500/20 to-red-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+              
+              {/* Ícone decorativo */}
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 blur-md opacity-70 animate-pulse"></div>
+                  <div className="relative flex items-center justify-center h-16 w-16 rounded-full bg-blue-950 border border-blue-500/50">
+                    <Code className="h-8 w-8 text-blue-400" />
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          </div>
+              
+              <h3 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 mb-4">
+                Nossa Missão
+              </h3>
+              
+              <div className="relative z-10 space-y-4">
+                <p className="text-muted-foreground md:text-lg leading-relaxed">
+                  A chapa <span className="text-blue-400 font-semibold">#INCLUDE</span> <span className="text-cyan-400 font-semibold">&lt;MUDANÇA&gt;</span> representa uma visão coletiva para o futuro do Centro Acadêmico de
+                  Engenharia de Computação. Nosso nome, que combina a diretiva include do C++ com a palavra "mudança",
+                  reflete nosso compromisso com a inclusividade e a transformação na educação em engenharia de computação.
+                </p>
+                
+                <div className="flex flex-wrap gap-4 justify-center mt-6 md:mt-8">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <GlowingButton asChild className="relative group overflow-hidden">
+                      <Link href="/about" className="flex items-center gap-2 px-6 py-3 md:px-8 md:py-4">
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-cyan-500/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span className="relative flex items-center gap-2 font-bold text-base md:text-lg">
+                          Conheça Nossa Equipe
+                          <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </span>
+                      </Link>
+                    </GlowingButton>
+                  </motion.div>
+                  
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <Button 
+                      variant="outline" 
+                      asChild
+                      className="border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg"
+                    >
+                      <Link href="#propostas" className="flex items-center gap-2">
+                        <span>Nossas Propostas</span>
+                        <ChevronRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
+        
+        {/* Adicionar keyframes para animação de flutuação */}
+        <style jsx global>{`
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-20px);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Propostas Section */}
@@ -296,20 +387,20 @@ export default function HomePage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <PropostaCard
                   icon={<BookOpen className="h-10 w-10 text-blue-500" />}
-                  title="Grupos de Estudo"
-                  description="Criar grupos de estudo organizados por disciplina, com monitores voluntários e material de apoio."
+                  title="Acompanhamento Curricular"
+                  description="Estabelecer canal para sugestões de melhorias na grade curricular e metodologias de ensino."
                   delay={0.1}
                 />
                 <PropostaCard
                   icon={<Calendar className="h-10 w-10 text-blue-500" />}
-                  title="Semana Tecnológica"
-                  description="Organizar uma semana de palestras, workshops e hackathons com profissionais da indústria e academia."
+                  title="Club de Programação"
+                  description="Clube responsável por oficinas de tecnologias emergentes no mercado, além de palestras, workshops e hackathons com profissionais da indústria e academia."
                   delay={0.2}
                 />
                 <PropostaCard
                   icon={<Lightbulb className="h-10 w-10 text-blue-500" />}
                   title="Programa de Mentoria"
-                  description="Conectar calouros com estudantes veteranos para orientação acadêmica e profissional."
+                  description="Implementar sistema de monitoria entre alunos veteranos e calouros para disciplinas com altos índices de reprovação (Cálculo, Física, Programação)"
                   delay={0.3}
                 />
               </div>
@@ -319,20 +410,20 @@ export default function HomePage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <PropostaCard
                   icon={<Cpu className="h-10 w-10 text-blue-500" />}
-                  title="Modernização de Laboratórios"
-                  description="Atualizar equipamentos e softwares dos laboratórios de computação para tecnologias mais recentes."
+                  title="Melhoria dos Laboratórios"
+                  description="Trabalhar junto à coordenação para atualização dos equipamentos dos laboratórios."
                   delay={0.1}
                 />
                 <PropostaCard
                   icon={<Code className="h-10 w-10 text-blue-500" />}
-                  title="Espaço de Coworking"
-                  description="Criar um espaço colaborativo para desenvolvimento de projetos e estudos em grupo."
+                  title="Espaço de Convivência"
+                  description="Implementar uma área dedicada para descanso e interação entre os estudantes, um espaço colaborativo que sirva também para o desenvolvimento de projetos e estudos em grupo."
                   delay={0.2}
                 />
                 <PropostaCard
                   icon={<CheckCircle className="h-10 w-10 text-blue-500" />}
                   title="Biblioteca Técnica"
-                  description="Ampliar o acervo de livros técnicos e disponibilizar recursos digitais para estudantes."
+                  description="Ampliar o acervo de livros técnicos e disponibilizar recursos digitais para estudantes com materiais extracurriculares."
                   delay={0.3}
                 />
               </div>
@@ -342,20 +433,20 @@ export default function HomePage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <PropostaCard
                   icon={<Users className="h-10 w-10 text-blue-500" />}
-                  title="Inclusão e Diversidade"
-                  description="Implementar programas para aumentar a diversidade e inclusão no curso de Engenharia de Computação."
+                  title="Competições Técnicas"
+                  description="Organizar olimpíadas de programação, maratonas de código e desafios técnicos."
                   delay={0.1}
                 />
                 <PropostaCard
                   icon={<Calendar className="h-10 w-10 text-blue-500" />}
                   title="Eventos de Integração"
-                  description="Promover eventos sociais e culturais para fortalecer os laços entre estudantes e professores."
+                  description="Promover eventos sociais e culturais para fortalecer os laços entre estudantes e professores (games, esportes, confraternizações)."
                   delay={0.2}
                 />
                 <PropostaCard
                   icon={<Lightbulb className="h-10 w-10 text-blue-500" />}
-                  title="Projetos Sociais"
-                  description="Desenvolver iniciativas de impacto social utilizando tecnologia para beneficiar a comunidade local."
+                  title="Caravanas"
+                  description="Fomentar a submissão de artigos para congressos como o CSBC e o SBRT, além de organizar caravanas para esses eventos, contribui para a disseminação do conhecimento e o fortalecimento da integração entre estudantes, pesquisadores e profissionais."
                   delay={0.3}
                 />
               </div>
@@ -393,31 +484,31 @@ export default function HomePage() {
                   "Networking com pesquisadores",
                   "Participação em workshops e minicursos",
                 ],
-                image: "/placeholder.svg?height=200&width=400&text=CSBC+2025",
+                image: "/csbcjpg.jpg",
               },
               {
-                title: "CSNC Workshop",
+                title: " Workshop",
                 date: "Maio 2025",
                 description:
-                  "Workshop de Ciência da Computação, Sistemas e Novas Tecnologias com palestras, minicursos e apresentações de projetos desenvolvidos pelos alunos.",
+                  "Workshop de  Computação, com palestras, minicursos e apresentações de projetos desenvolvidos pelos alunos.",
                 highlights: [
-                  "Palestras com profissionais da indústria",
+                  "Palestras com profissionais do Mercado de Trabalho",
                   "Apresentação de projetos de pesquisa",
                   "Competições de programação",
                 ],
-                image: "/placeholder.svg?height=200&width=400&text=CSNC+Workshop",
+                image: "/Planejar-um-workshop.jpg",
               },
               {
                 title: "Hackathon de Inovação",
                 date: "Primeiro Semestre 2025",
                 description:
-                  "Competição de 48 horas para desenvolver soluções tecnológicas para problemas reais da universidade e comunidade.",
+                  "Competição de 8 horas para desenvolver soluções tecnológicas para problemas reais da universidade e comunidade.",
                 highlights: [
                   "Prêmios para as melhores soluções",
                   "Mentoria de profissionais",
                   "Oportunidades de estágio",
                 ],
-                image: "/placeholder.svg?height=200&width=400&text=Hackathon",
+                image: "/Hackathon.png",
               },
               {
                 title: "Semana de Engenharia de Computação",
@@ -425,7 +516,7 @@ export default function HomePage() {
                 description:
                   "Uma semana inteira dedicada à engenharia de computação com palestras, workshops e atividades práticas.",
                 highlights: ["Palestrantes renomados", "Workshops técnicos", "Feira de recrutamento"],
-                image: "/placeholder.svg?height=200&width=400&text=Semana+EngComp",
+                image: "/slides (2).png",
               },
               {
                 title: "Maratona de Programação",
@@ -433,7 +524,7 @@ export default function HomePage() {
                 description:
                   "Competições de programação para desenvolver habilidades de resolução de problemas e trabalho em equipe.",
                 highlights: ["Diferentes níveis de dificuldade", "Preparação para competições nacionais", "Premiações"],
-                image: "/placeholder.svg?height=200&width=400&text=Maratona+Programação",
+                image: "/maratona.jpeg",
               },
               {
                 title: "Projeto de Extensão Tecnológica",
@@ -441,7 +532,7 @@ export default function HomePage() {
                 description:
                   "Projeto para levar conhecimento de tecnologia para escolas públicas e comunidades carentes.",
                 highlights: ["Inclusão digital", "Ensino de programação", "Impacto social"],
-                image: "/placeholder.svg?height=200&width=400&text=Extensão+Tecnológica",
+                image: "/extensao.jpeg",
               },
             ].map((evento, index) => (
               <motion.div
@@ -455,7 +546,7 @@ export default function HomePage() {
                   {evento.image && (
                     <div className="relative h-48 w-full">
                       <Image
-                        src={evento.image || "/placeholder.svg"}
+                        src={evento.image || "/extensao.jpeg"}
                         alt={evento.title}
                         fill
                         className="object-cover"
@@ -503,7 +594,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Sugestões e Reclamações</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Sugestões </h2>
               <p className="mt-4 text-muted-foreground md:text-xl">
                 Compartilhe suas ideias, sugestões ou reclamações para ajudar a melhorar nosso Centro Acadêmico
               </p>
