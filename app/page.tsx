@@ -80,41 +80,41 @@ export default function HomePage() {
                   </Link>
                 </GlowingButton>
                 <Button variant="outline" className="border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10 w-full sm:w-auto">
-                  <Link href="/about" className="text-sm sm:text-base">Nossas Propostas</Link>
+                  <Link href="#propostas" className="text-sm sm:text-base">Nossas Propostas</Link>
                 </Button>
               </div>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative mx-auto lg:ml-auto"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="relative mx-auto lg:ml-auto max-sm:mt-20"
             >
-              <div className="relative h-[250px] w-[250px] sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-400/20 blur-3xl"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-[200px] w-[200px] sm:h-[300px] sm:w-[300px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-sm">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Image
-                        src="/faz o M (6).png"
-                        alt="Centro Acadêmico de Engenharia de Computação"
-                        width={400}
-                        height={400}
-                        className="rounded-full object-cover p-4 sm:p-6"
-                      />
-                    </div>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
-                      <Cpu className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
-                    </div>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
-                      <Users className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
-                    </div>
-                    <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
-                      <Code className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
-                    </div>
-                    <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
-                      <BookOpen className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
-                    </div>
+              <div className="relative h-[300px] w-[300px] max-sm:h-[350px] max-sm:w-[350px] sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px] flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-400/20 blur-3xl max-sm:scale-110"></div>
+
+                <div className="relative h-[250px] w-[250px] max-sm:h-[300px] max-sm:w-[300px] sm:h-[300px] sm:w-[300px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-sm flex items-center justify-center">
+                  <Image
+                      src="/faz o M (6).png"
+                      alt="Centro Acadêmico de Engenharia de Computação"
+                      fill
+                      className="absolute inset-0 rounded-full object-cover p-2 sm:p-4"
+                  />
+
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                    <Cpu className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
+                  </div>
+
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                    <Users className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
+                  </div>
+
+                  <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                    <Code className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
+                  </div>
+
+                  <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                    <BookOpen className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
                   </div>
                 </div>
               </div>

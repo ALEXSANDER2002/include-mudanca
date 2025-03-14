@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="space-y-6 md:space-y-8">
           <div className="relative aspect-video overflow-hidden rounded-lg shadow-xl">
             <Image
-              src="/placeholder.svg?height=400&width=800&text=Include+Mudança+Chapa"
+              src="/logo-about.png"
               alt="Chapa #Include <Mudança>"
               fill
               className="object-cover"
@@ -82,11 +82,11 @@ export default function AboutPage() {
               ].map((member) => (
                 <Card key={member.name} className="overflow-hidden">
                   <div className="relative aspect-square rounded-full overflow-hidden border-4 border-primary/20 hover:border-primary/40 transition-all duration-300">
-                    <Image 
-                      src={member.image} 
-                      alt={member.name} 
-                      fill 
-                      className="object-cover hover:scale-110 transition-transform duration-300" 
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <CardHeader className="p-3 md:p-4 text-center">
