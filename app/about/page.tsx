@@ -9,16 +9,16 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="container px-4 py-8 md:px-6 md:py-12 lg:py-24">
-      <div className="mx-auto max-w-3xl space-y-8 md:space-y-12">
-        <div className="space-y-3 md:space-y-4">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nossa Chapa</h1>
-          <p className="text-sm md:text-base lg:text-xl text-muted-foreground">
+      <div className="mx-auto max-w-5xl space-y-8 md:space-y-12">
+        <div className="space-y-3 md:space-y-4 text-center">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Nossa Chapa</h1>
+          <p className="text-sm md:text-base lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Conheça a chapa #Include &lt;Mudança&gt; e nossa visão para o futuro.
           </p>
         </div>
 
         <div className="space-y-6 md:space-y-8">
-          <div className="relative aspect-video overflow-hidden rounded-lg">
+          <div className="relative aspect-video overflow-hidden rounded-lg shadow-xl">
             <Image
               src="/placeholder.svg?height=400&width=800&text=Include+Mudança+Chapa"
               alt="Chapa #Include <Mudança>"
@@ -26,8 +26,8 @@ export default function AboutPage() {
               className="object-cover"
             />
           </div>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold">Chapa #Include &lt;Mudança&gt;</h2>
+          <div className="space-y-4 bg-card p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">#Include &lt;Mudança&gt;</h2>
             <p className="text-muted-foreground">
               A chapa #Include &lt;Mudança&gt; representa uma visão coletiva para o futuro do Centro Acadêmico de
               Engenharia de Computação. Nosso nome, que combina a diretiva include do C++ com a palavra "mudança",
@@ -47,46 +47,51 @@ export default function AboutPage() {
               inovador.
             </p>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-lg md:text-xl font-bold">Nossa Equipe</h3>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-center bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Nossa Equipe</h3>
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
               {[
                 {
                   name: "Alexsander",
                   role: "Presidente",
-                  image: "/placeholder.svg?height=200&width=200&text=Alexsander",
+                  image: "/alex.jpeg",
                 },
-                { name: "Kalleb", role: "Vice", image: "/placeholder.svg?height=200&width=200&text=Kalleb" },
-                { name: "Murilo", role: "Tesoureiro", image: "/placeholder.svg?height=200&width=200&text=Murilo" },
-                { name: "Carlos", role: "Comunicação", image: "/placeholder.svg?height=200&width=200&text=Carlos" },
-                { name: "Gustavo", role: "Marketing", image: "/placeholder.svg?height=200&width=200&text=Gustavo" },
-                { name: "Lívia", role: "Marketing", image: "/placeholder.svg?height=200&width=200&text=Livia" },
+                { name: "Kalleb", role: "Vice", image: "/kaleb.jpeg" },
+                { name: "Murilo", role: "Tesoureiro", image: "/murilo.jpeg" },
+                { name: "Carlos", role: "Comunicação", image: "/carlosss.jpg" },
+                { name: "Gustavo", role: "Marketing", image: "/gustacvo.jpeg" },
+                { name: "Lívia", role: "Marketing", image: "/livia.jpeg" },
                 {
                   name: "Ane Saraiva",
                   role: "Eventos e Cultura",
-                  image: "/placeholder.svg?height=200&width=200&text=Ane",
+                  image: "/ane.jpeg",
                 },
                 {
                   name: "Yasmim",
                   role: "Eventos e Cultura",
-                  image: "/placeholder.svg?height=200&width=200&text=Yasmim",
+                  image: "/yasmin.jpeg",
                 },
-                { name: "Lincoln", role: "Projetos", image: "/placeholder.svg?height=200&width=200&text=Lincoln" },
-                { name: "Gabriel", role: "Projetos", image: "/placeholder.svg?height=200&width=200&text=Gabriel" },
+                { name: "Lincoln", role: "Projetos", image: "/lincum.jpeg" },
+                { name: "Gabriel", role: "Projetos", image: "/martins.jpeg" },
                 {
                   name: "Helton",
                   role: "Secretário Geral",
-                  image: "/placeholder.svg?height=200&width=200&text=Helton",
+                  image: "/elton.jpeg",
                 },
-                { name: "Elson", role: "Diretor Acadêmico", image: "/placeholder.svg?height=200&width=200&text=Elson" },
+                { name: "Elson", role: "Diretor Acadêmico", image: "/elson.jpeg" },
               ].map((member) => (
                 <Card key={member.name} className="overflow-hidden">
-                  <div className="relative aspect-square">
-                    <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <div className="relative aspect-square rounded-full overflow-hidden border-4 border-primary/20 hover:border-primary/40 transition-all duration-300">
+                    <Image 
+                      src={member.image} 
+                      alt={member.name} 
+                      fill 
+                      className="object-cover hover:scale-110 transition-transform duration-300" 
+                    />
                   </div>
-                  <CardHeader className="p-3 md:p-4">
-                    <CardTitle className="text-base md:text-lg">{member.name}</CardTitle>
-                    <CardDescription>{member.role}</CardDescription>
+                  <CardHeader className="p-3 md:p-4 text-center">
+                    <CardTitle className="text-base md:text-lg bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">{member.name}</CardTitle>
+                    <CardDescription className="font-medium">{member.role}</CardDescription>
                   </CardHeader>
                 </Card>
               ))}

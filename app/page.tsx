@@ -42,45 +42,45 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           <HeroParticles />
         </div>
-        <div className="container relative z-10 px-4 py-16 md:py-24 lg:py-32">
+        <div className="container relative z-10 px-4 py-8 sm:py-16 md:py-24 lg:py-32">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col gap-4"
+              className="flex flex-col gap-4 text-center lg:text-left"
             >
-              <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm text-blue-500">
+              <div className="inline-flex items-center justify-center lg:justify-start rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs sm:text-sm text-blue-500 mx-auto lg:mx-0">
                 <span className="relative flex h-2 w-2 mr-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
                 </span>
-                Eleições 2025 - Centro Acadêmico de Engenharia de Computação
+                Eleições 2025 - Centro Acadêmico
               </div>
-              <h1 className="text-3xl font-bold tracking-tighter md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight">
+              <h1 className="text-2xl sm:text-3xl font-bold tracking-tighter md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
                   #INCLUDE
                 </span>{" "}
                 <br className="hidden sm:inline" />
                 &lt;MUDANÇA&gt;
               </h1>
-              <p className="max-w-[600px] text-base text-muted-foreground md:text-xl">
+              <p className="max-w-[600px] text-sm sm:text-base text-muted-foreground md:text-xl mx-auto lg:mx-0">
                 Transformando a educação através da inovação, inclusão e colaboração. Junte-se a nós para moldar o
                 futuro da engenharia de computação.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                <GlowingButton asChild className="relative overflow-hidden group animate-pulse hover:animate-none">
-                  <Link href="#vote" className="flex items-center justify-center px-6 py-3">
+              <div className="flex flex-col sm:flex-row gap-4 mt-2 justify-center lg:justify-start">
+                <GlowingButton asChild className="relative overflow-hidden group animate-pulse hover:animate-none w-full sm:w-auto">
+                  <Link href="#vote" className="flex items-center justify-center px-4 sm:px-6 py-3">
                     <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="relative flex items-center">
-                      <Vote className="mr-2 h-5 w-5" />
+                    <span className="relative flex items-center text-sm sm:text-base">
+                      <Vote className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                       <span className="font-bold">VOTE AGORA</span>
-                      <span className="ml-1 text-blue-300">• Seu voto faz a diferença!</span>
+                      <span className="ml-1 text-blue-300 hidden sm:inline">• Seu voto faz a diferença!</span>
                     </span>
                   </Link>
                 </GlowingButton>
-                <Button variant="outline" className="border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10">
-                  <Link href="/about">Nossas Propostas</Link>
+                <Button variant="outline" className="border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10 w-full sm:w-auto">
+                  <Link href="/about" className="text-sm sm:text-base">Nossas Propostas</Link>
                 </Button>
               </div>
             </motion.div>
@@ -90,30 +90,30 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative mx-auto lg:ml-auto"
             >
-              <div className="relative h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] md:h-[500px] md:w-[500px]">
+              <div className="relative h-[250px] w-[250px] sm:h-[350px] sm:w-[350px] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-400/20 blur-3xl"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-[300px] w-[300px] sm:h-[350px] sm:w-[350px] md:h-[450px] md:w-[450px] rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-sm">
+                  <div className="relative h-[200px] w-[200px] sm:h-[300px] sm:w-[300px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-sm">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Image
                         src="/faz o M (6).png"
                         alt="Centro Acadêmico de Engenharia de Computação"
                         width={400}
                         height={400}
-                        className="rounded-full object-cover"
+                        className="rounded-full object-cover p-4 sm:p-6"
                       />
                     </div>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-3">
-                      <Cpu className="h-6 w-6 text-blue-500" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                      <Cpu className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
                     </div>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-3">
-                      <Users className="h-6 w-6 text-blue-500" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                      <Users className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
                     </div>
-                    <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-3">
-                      <Code className="h-6 w-6 text-blue-500" />
+                    <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                      <Code className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
                     </div>
-                    <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-3">
-                      <BookOpen className="h-6 w-6 text-blue-500" />
+                    <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 bg-blue-500/10 backdrop-blur-sm border border-blue-500/30 rounded-full p-2 sm:p-3">
+                      <BookOpen className="h-4 w-4 sm:h-6 sm:w-6 text-blue-500" />
                     </div>
                   </div>
                 </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* Sobre a Chapa */}
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section className="py-8 sm:py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-900/20 opacity-30"></div>
         
         {/* Partículas decorativas */}
@@ -152,27 +152,28 @@ export default function HomePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mx-auto max-w-[800px] text-center mb-12"
+            className="mx-auto max-w-[800px] text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
               Quem Somos
             </h2>
-            <p className="mt-4 text-muted-foreground md:text-xl">
+            <p className="mt-4 text-sm sm:text-base text-muted-foreground md:text-xl">
               Conheça a chapa #INCLUDE &lt;MUDANÇA&gt; e nossa visão para o Centro Acadêmico
             </p>
           </motion.div>
 
-          <div className="relative mx-auto max-w-[1100px] mb-16">
+          <div className="relative mx-auto max-w-[1100px] mb-8 sm:mb-16">
             {/* Background decorativo */}
             <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-orange-500/10 rounded-3xl backdrop-blur-sm border border-blue-500/20"></div>
 
             {/* Grid de membros da equipe */}
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 lg:gap-12 p-4 md:p-8">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6 lg:gap-8 p-3 sm:p-4 md:p-6 lg:p-8">
               {/* Primeira linha - Presidente e Vice */}
-              <div className="col-span-2 md:col-span-4 flex justify-center gap-4 md:gap-8 lg:gap-16 mb-4 md:mb-8">
+              <div className="col-span-2 md:col-span-4 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-8 lg:gap-16 mb-3 sm:mb-4 md:mb-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full sm:w-auto"
                 >
                   <TeamMember
                     name="Alexsander"
@@ -184,6 +185,7 @@ export default function HomePage() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full sm:w-auto"
                 >
                   <TeamMember
                     name="Kalleb"
@@ -205,6 +207,7 @@ export default function HomePage() {
                   key={member.name}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full sm:w-auto"
                 >
                   <TeamMember
                     name={member.name}
@@ -226,6 +229,7 @@ export default function HomePage() {
                   key={member.name}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full sm:w-auto"
                 >
                   <TeamMember
                     name={member.name}
@@ -241,6 +245,7 @@ export default function HomePage() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full sm:w-auto"
                 >
                   <TeamMember
                     name="Helton"
@@ -252,6 +257,7 @@ export default function HomePage() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className="w-full sm:w-auto"
                 >
                   <TeamMember
                     name="Elson"
