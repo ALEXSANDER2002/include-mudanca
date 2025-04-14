@@ -71,7 +71,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-2 justify-center lg:justify-start">
                 <GlowingButton asChild className="relative overflow-hidden group animate-pulse hover:animate-none w-full sm:w-auto">
-                  <Link href="#projetos" className="flex items-center justify-center px-4 sm:px-6 py-3">
+                  <Link href="#eventos" className="flex items-center justify-center px-4 sm:px-6 py-3">
                     <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     <span className="relative flex items-center text-sm sm:text-base">
                       <Lightbulb className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -189,7 +189,7 @@ export default function HomePage() {
             <Card className="group relative overflow-hidden border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10">
               <div className="relative h-48 w-full overflow-hidden">
                 <div className="absolute top-3 left-3 z-20">
-                  <span className="inline-flex items-center rounded-full bg-purple-500/90 px-3 py-1 text-sm font-medium text-white">
+                  <span className="inline-flex items-center rounded-full bg-gray-600/90 px-3 py-1 text-sm font-medium text-gray-200">
                     Em Breve
                   </span>
                 </div>
@@ -219,7 +219,7 @@ export default function HomePage() {
                   <span>20 vagas disponíveis</span>
                 </div>
                 <Button 
-                  className="w-full bg-purple-500 hover:bg-purple-600 cursor-not-allowed"
+                  className="w-full bg-gray-600 hover:bg-gray-700 cursor-not-allowed opacity-80"
                   disabled
                 >
                   Em Breve
@@ -231,7 +231,7 @@ export default function HomePage() {
             <Card className="group relative overflow-hidden border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10">
               <div className="relative h-48 w-full overflow-hidden">
                 <div className="absolute top-3 left-3 z-20">
-                  <span className="inline-flex items-center rounded-full bg-purple-500/90 px-3 py-1 text-sm font-medium text-white">
+                  <span className="inline-flex items-center rounded-full bg-gray-600/90 px-3 py-1 text-sm font-medium text-gray-200">
                     Em Breve
                   </span>
                 </div>
@@ -261,7 +261,7 @@ export default function HomePage() {
                   <span>40 vagas disponíveis</span>
                 </div>
                 <Button 
-                  className="w-full bg-purple-500 hover:bg-purple-600 cursor-not-allowed"
+                  className="w-full bg-gray-600 hover:bg-gray-700 cursor-not-allowed opacity-80"
                   disabled
                 >
                   Em Breve
