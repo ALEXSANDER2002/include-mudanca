@@ -176,9 +176,11 @@ export default function HomePage() {
                 </div>
                 <Button 
                   className="w-full bg-blue-500 hover:bg-blue-600"
-                  onClick={() => setSelectedEvent({ title: "Mini Curso de Git e GitHub", date: "17/04/2025" })}
+                  asChild
                 >
-                  Inscrever
+                  <Link href="https://forms.gle/q9eMncirr96eQruD9" target="_blank" rel="noopener noreferrer">
+                    Inscrever
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
