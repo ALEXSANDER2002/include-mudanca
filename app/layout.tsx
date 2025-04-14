@@ -1,14 +1,16 @@
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ThemeProvider } from "next-themes"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import "./globals.css"
+import { Toaster } from "sonner"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "Chapa #INCLUDE <MUDANÇA>",
-  description: "Transformando a educação através da inovação, inclusão e colaboração.",
+export const metadata: Metadata = {
+  title: "CAENC - Centro Acadêmico de Engenharia da Computação",
+  description: "Centro Acadêmico de Engenharia da Computação - CAENC",
 }
 
 export default function RootLayout({
@@ -40,6 +42,7 @@ export default function RootLayout({
             <SiteFooter />
           </div>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )

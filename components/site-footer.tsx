@@ -9,7 +9,7 @@ export function SiteFooter() {
           <Link href="/" className="flex items-center gap-2">
             <Code className="h-6 w-6 text-blue-500" />
             <span className="inline-block font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
-              #INCLUDE &lt;MUDANÇA&gt;
+              #CAENC
             </span>
           </Link>
           <p className="text-xs sm:text-sm text-muted-foreground">

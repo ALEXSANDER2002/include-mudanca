@@ -1,0 +1,1 @@
+export { EventRegistrationModal } from "./event-registration-modal" 

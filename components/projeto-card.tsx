@@ -5,14 +5,14 @@ import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import React from "react"
 
-interface PropostaCardProps {
+interface ProjetoCardProps {
   icon: ReactNode
   title: string
   description: string
   delay?: number
 }
 
-export function PropostaCard({ icon, title, description, delay = 0 }: PropostaCardProps) {
+export function ProjetoCard({ icon, title, description, delay = 0 }: ProjetoCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -34,5 +34,4 @@ export function PropostaCard({ icon, title, description, delay = 0 }: PropostaCa
       </Card>
     </motion.div>
   )
-}
-
+} 

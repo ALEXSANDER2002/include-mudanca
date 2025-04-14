@@ -21,13 +21,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { HeroParticles } from "@/components/hero-particles"
 import { GlowingButton } from "@/components/glowing-button"
 import { CircuitBackground } from "@/components/circuit-background"
-import { PropostaCard } from "@/components/proposta-card"
+import { ProjetoCard } from "@/components/projeto-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { TeamMember } from "@/components/team-member"
 import { SuggestionForm } from "@/components/suggestion-form"
+import { EventRegistrationModal } from "./components/modals/event-registration-modal"
 
 export default function HomePage() {
   const [mounted, setMounted] = useState(false)
+  const [selectedEvent, setSelectedEvent] = useState<{ title: string; date: string } | null>(null)
 
   useEffect(() => {
     setMounted(true)
@@ -55,32 +57,31 @@ export default function HomePage() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
                 </span>
-                Eleições 2025 - Centro Acadêmico
+                Centro Acadêmico de Engenharia da Computação
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tighter md:text-5xl/tight lg:text-6xl/tight xl:text-7xl/tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400">
-                  #INCLUDE
+                  #CAENC
                 </span>{" "}
                 <br className="hidden sm:inline" />
                 &lt;MUDANÇA&gt;
               </h1>
               <p className="max-w-[600px] text-sm sm:text-base text-muted-foreground md:text-xl mx-auto lg:mx-0">
-                Transformando a educação através da inovação, inclusão e colaboração. Junte-se a nós para moldar o
-                futuro da engenharia de computação.
+                Representando e fortalecendo a comunidade acadêmica através de projetos, eventos e iniciativas que impulsionam o desenvolvimento profissional e pessoal dos estudantes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-2 justify-center lg:justify-start">
                 <GlowingButton asChild className="relative overflow-hidden group animate-pulse hover:animate-none w-full sm:w-auto">
-                  <Link href="#vote" className="flex items-center justify-center px-4 sm:px-6 py-3">
+                  <Link href="#projetos" className="flex items-center justify-center px-4 sm:px-6 py-3">
                     <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     <span className="relative flex items-center text-sm sm:text-base">
-                      <Vote className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                      <span className="font-bold">VOTE AGORA</span>
-                      <span className="ml-1 text-blue-300 hidden sm:inline">• Seu voto faz a diferença!</span>
+                      <Lightbulb className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="font-bold">CONHEÇA NOSSOS PROJETOS</span>
+                      <span className="ml-1 text-blue-300 hidden sm:inline">• Faça parte dessa mudança!</span>
                     </span>
                   </Link>
                 </GlowingButton>
                 <Button variant="outline" className="border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10 w-full sm:w-auto">
-                  <Link href="#propostas" className="text-sm sm:text-base">Nossas Propostas</Link>
+                  <Link href="#eventos" className="text-sm sm:text-base">Próximos Eventos</Link>
                 </Button>
               </div>
             </motion.div>
@@ -95,10 +96,11 @@ export default function HomePage() {
 
                 <div className="relative h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] md:h-[350px] md:w-[350px] lg:h-[400px] lg:w-[400px] rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-sm flex items-center justify-center">
                   <Image
-                      src="/faz o M (6).png"
+                      src="/CAENC LOGO.png"
                       alt="Centro Acadêmico de Engenharia de Computação"
                       fill
-                      className="absolute inset-0 rounded-full object-cover p-2 sm:p-4"
+                      className="absolute inset-0 object-contain p-8 sm:p-12"
+                      priority
                   />
 
                   {/* Ícones ao redor da imagem */}
@@ -125,7 +127,158 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Sobre a Chapa */}
+      {/* Próximos Eventos */}
+      <section className="py-12 sm:py-16">
+        <div className="container px-4">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-xs sm:text-sm text-blue-500 mb-4">
+              Eventos Abertos
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Inscreva-se nos Próximos Eventos</h2>
+            <p className="text-muted-foreground">
+              Confira os eventos que estão com inscrições abertas e garanta sua participação
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Mini Curso de Git e GitHub */}
+            <Card className="group relative overflow-hidden border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10">
+              <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute top-3 left-3 z-20">
+                  <span className="inline-flex items-center rounded-full bg-green-500/90 px-3 py-1 text-sm font-medium text-white">
+                    Inscrições Abertas
+                  </span>
+                </div>
+                <Image
+                  src="/git.jpg"
+                  alt="Git e GitHub"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex flex-col gap-2">
+                  <span className="text-blue-400">Mini Curso</span>
+                  <span>de Git e GitHub</span>
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Aprenda os fundamentos do Git e GitHub para controle de versão
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>17/04/2025</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Users className="h-4 w-4" />
+                  <span>30 vagas disponíveis</span>
+                </div>
+                <Button 
+                  className="w-full bg-blue-500 hover:bg-blue-600"
+                  onClick={() => setSelectedEvent({ title: "Mini Curso de Git e GitHub", date: "17/04/2025" })}
+                >
+                  Inscrever
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Workshop de IA */}
+            <Card className="group relative overflow-hidden border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10">
+              <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute top-3 left-3 z-20">
+                  <span className="inline-flex items-center rounded-full bg-purple-500/90 px-3 py-1 text-sm font-medium text-white">
+                    Em Breve
+                  </span>
+                </div>
+                <Image
+                  src="/ia.jpg"
+                  alt="Workshop de IA"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex flex-col gap-2">
+                  <span className="text-blue-400">Workshop</span>
+                  <span>de Inteligência Artificial</span>
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Aprenda os fundamentos de IA e Machine Learning com especialistas da área
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>25 de Setembro, 2025</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Users className="h-4 w-4" />
+                  <span>20 vagas disponíveis</span>
+                </div>
+                <Button 
+                  className="w-full bg-purple-500 hover:bg-purple-600 cursor-not-allowed"
+                  disabled
+                >
+                  Em Breve
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Workshop de Cálculo */}
+            <Card className="group relative overflow-hidden border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/10">
+              <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute top-3 left-3 z-20">
+                  <span className="inline-flex items-center rounded-full bg-purple-500/90 px-3 py-1 text-sm font-medium text-white">
+                    Em Breve
+                  </span>
+                </div>
+                <Image
+                  src="/calculo.jpg"
+                  alt="Workshop de Cálculo"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="flex flex-col gap-2">
+                  <span className="text-blue-400">Workshop</span>
+                  <span>de Cálculo I e II</span>
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  Reforce seus conhecimentos em Cálculo I e II com exercícios práticos e resolução de problemas
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  <span>10 a 14 de Outubro, 2025</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Users className="h-4 w-4" />
+                  <span>40 vagas disponíveis</span>
+                </div>
+                <Button 
+                  className="w-full bg-purple-500 hover:bg-purple-600 cursor-not-allowed"
+                  disabled
+                >
+                  Em Breve
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal de Inscrição */}
+      <EventRegistrationModal
+        isOpen={!!selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+        eventTitle={selectedEvent?.title || ""}
+        eventDate={selectedEvent?.date || ""}
+      />
+
+      {/* Nossa Equipe */}
       <section className="py-8 sm:py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-transparent to-orange-900/20 opacity-30"></div>
         
@@ -157,10 +310,10 @@ export default function HomePage() {
             className="mx-auto max-w-[800px] text-center mb-8 sm:mb-12"
           >
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
-              Quem Somos
+              Nossa Equipe
             </h2>
             <p className="mt-4 text-sm sm:text-base text-muted-foreground md:text-xl">
-              Conheça a chapa #INCLUDE &lt;MUDANÇA&gt; e nossa visão para o Centro Acadêmico
+              Conheça o #CAENC e nossa visão para o Centro Acadêmico
             </p>
           </motion.div>
 
@@ -300,9 +453,8 @@ export default function HomePage() {
               
               <div className="relative z-10 space-y-4">
                 <p className="text-muted-foreground md:text-lg leading-relaxed">
-                  A chapa <span className="text-blue-400 font-semibold">#INCLUDE</span> <span className="text-cyan-400 font-semibold">&lt;MUDANÇA&gt;</span> representa uma visão coletiva para o futuro do Centro Acadêmico de
-                  Engenharia de Computação. Nosso nome, que combina a diretiva include do C++ com a palavra "mudança",
-                  reflete nosso compromisso com a inclusividade e a transformação na educação em engenharia de computação.
+                  O #CAENC representa uma visão coletiva para o futuro do Centro Acadêmico de
+                  Engenharia de Computação. Nosso compromisso é com a inclusividade e a transformação na educação em engenharia de computação.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 justify-center mt-6 md:mt-8">
@@ -332,8 +484,8 @@ export default function HomePage() {
                       asChild
                       className="border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 px-6 py-3 md:px-8 md:py-4 text-base md:text-lg"
                     >
-                      <Link href="#propostas" className="flex items-center gap-2">
-                        <span>Nossas Propostas</span>
+                      <Link href="#projetos" className="flex items-center gap-2">
+                        <span>Nossos Projetos</span>
                         <ChevronRight className="h-5 w-5" />
                       </Link>
                     </Button>
@@ -357,8 +509,8 @@ export default function HomePage() {
         `}</style>
       </section>
 
-      {/* Propostas Section */}
-      <section id="propostas" className="relative py-16 md:py-24 bg-gradient-to-b from-background to-blue-950/20">
+      {/* Projetos Section */}
+      <section id="projetos" className="relative py-16 md:py-24 bg-gradient-to-b from-background to-blue-950/20">
         <div className="absolute inset-0 z-0 opacity-20">
           <CircuitBackground />
         </div>
@@ -369,7 +521,7 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nossas Propostas</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nossos Projetos</h2>
               <p className="mt-4 text-muted-foreground md:text-xl">
                 Conheça os planos e iniciativas que queremos implementar para melhorar a experiência acadêmica
               </p>
@@ -393,19 +545,19 @@ export default function HomePage() {
 
             <TabsContent value="academico" className="space-y-8">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <PropostaCard
+                <ProjetoCard
                   icon={<BookOpen className="h-10 w-10 text-blue-500" />}
                   title="Acompanhamento Curricular"
                   description="Estabelecer canal para sugestões de melhorias na grade curricular e metodologias de ensino."
                   delay={0.1}
                 />
-                <PropostaCard
+                <ProjetoCard
                   icon={<Calendar className="h-10 w-10 text-blue-500" />}
                   title="Club de Programação"
                   description="Clube responsável por oficinas de tecnologias emergentes no mercado, além de palestras, workshops e hackathons com profissionais da indústria e academia."
                   delay={0.2}
                 />
-                <PropostaCard
+                <ProjetoCard
                   icon={<Lightbulb className="h-10 w-10 text-blue-500" />}
                   title="Programa de Mentoria"
                   description="Implementar sistema de monitoria entre alunos veteranos e calouros para disciplinas com altos índices de reprovação (Cálculo, Física, Programação)"
@@ -416,19 +568,19 @@ export default function HomePage() {
 
             <TabsContent value="infraestrutura" className="space-y-8">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <PropostaCard
+                <ProjetoCard
                   icon={<Cpu className="h-10 w-10 text-blue-500" />}
                   title="Melhoria dos Laboratórios"
                   description="Trabalhar junto à coordenação para atualização dos equipamentos dos laboratórios."
                   delay={0.1}
                 />
-                <PropostaCard
+                <ProjetoCard
                   icon={<Code className="h-10 w-10 text-blue-500" />}
                   title="Espaço de Convivência"
                   description="Implementar uma área dedicada para descanso e interação entre os estudantes, um espaço colaborativo que sirva também para o desenvolvimento de projetos e estudos em grupo."
                   delay={0.2}
                 />
-                <PropostaCard
+                <ProjetoCard
                   icon={<CheckCircle className="h-10 w-10 text-blue-500" />}
                   title="Biblioteca Técnica"
                   description="Ampliar o acervo de livros técnicos e disponibilizar recursos digitais para estudantes com materiais extracurriculares."
@@ -439,19 +591,19 @@ export default function HomePage() {
 
             <TabsContent value="comunidade" className="space-y-8">
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                <PropostaCard
+                <ProjetoCard
                   icon={<Users className="h-10 w-10 text-blue-500" />}
                   title="Competições Técnicas"
                   description="Organizar olimpíadas de programação, maratonas de código e desafios técnicos."
                   delay={0.1}
                 />
-                <PropostaCard
+                <ProjetoCard
                   icon={<Calendar className="h-10 w-10 text-blue-500" />}
                   title="Eventos de Integração"
                   description="Promover eventos sociais e culturais para fortalecer os laços entre estudantes e professores (games, esportes, confraternizações)."
                   delay={0.2}
                 />
-                <PropostaCard
+                <ProjetoCard
                   icon={<Lightbulb className="h-10 w-10 text-blue-500" />}
                   title="Caravanas"
                   description="Fomentar a submissão de artigos para congressos como o CSBC e o SBRT, além de organizar caravanas para esses eventos, contribui para a disseminação do conhecimento e o fortalecimento da integração entre estudantes, pesquisadores e profissionais."
@@ -495,7 +647,7 @@ export default function HomePage() {
                 image: "/csbcjpg.jpg",
               },
               {
-                title: " Workshop",
+                title: "Workshop",
                 date: "Maio 2025",
                 description:
                   "Workshop de  Computação, com palestras, minicursos e apresentações de projetos desenvolvidos pelos alunos.",
@@ -504,7 +656,7 @@ export default function HomePage() {
                   "Apresentação de projetos de pesquisa",
                   "Competições de programação",
                 ],
-                image: "/Planejar-um-workshop.jpg",
+                image: "/ia.jpg",
               },
               {
                 title: "Hackathon de Inovação",
@@ -650,7 +802,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Vote em Nossa Chapa</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Vote no #CAENC</h2>
               <p className="mt-4 text-muted-foreground md:text-xl">
                 Seu apoio é fundamental para transformarmos o Centro Acadêmico de Engenharia de Computação
               </p>
@@ -682,7 +834,7 @@ export default function HomePage() {
                     <h4 className="text-lg font-medium">Como votar:</h4>
                     <ol className="space-y-2 pl-5 list-decimal text-muted-foreground">
                       <li>Acesse o portal de votação com seu login institucional</li>
-                      <li>Selecione a chapa "#INCLUDE &lt;MUDANÇA&gt;"</li>
+                      <li>Selecione "#CAENC"</li>
                       <li>Confirme seu voto com sua senha</li>
                       <li>Pronto! Seu voto foi registrado com segurança</li>
                     </ol>
@@ -729,7 +881,7 @@ export default function HomePage() {
             >
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Junte-se ao Movimento</h2>
               <p className="text-muted-foreground md:text-xl">
-                Faça parte da chapa #INCLUDE &lt;MUDANÇA&gt; e ajude a transformar nossa universidade
+                Faça parte do #CAENC e ajude a transformar nossa universidade
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                 <GlowingButton size="lg" asChild>

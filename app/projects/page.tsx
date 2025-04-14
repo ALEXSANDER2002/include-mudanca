@@ -79,8 +79,7 @@ export default function ProjectsPage() {
         <div className="space-y-3 md:space-y-4">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nossos Projetos</h1>
           <p className="text-sm md:text-base lg:text-xl text-muted-foreground">
-            Explore os projetos inovadores desenvolvidos pelo Centro Acadêmico de Engenharia de Computação e pela chapa
-            #Include &lt;Mudança&gt;.
+            Explore os projetos inovadores desenvolvidos pelo Centro Acadêmico de Engenharia de Computação e pelo #CAENC.
           </p>
         </div>
 

@@ -24,7 +24,16 @@ export function SiteHeader() {
       label: "Sobre Nós",
       active: pathname === "/about",
     },
-   
+    {
+      href: "/saec",
+      label: "SAEC",
+      active: pathname === "/saec",
+    },
+    {
+      href: "/avaliacao",
+      label: "Avaliação de Professores",
+      active: pathname === "/avaliacao",
+    },
     {
       href: "/contact",
       label: "Contato",
@@ -39,7 +48,7 @@ export function SiteHeader() {
           <Link href="/" className="flex items-center space-x-2">
             <Code className="h-5 w-5 md:h-6 md:w-6 text-blue-500" />
             <span className="inline-block font-bold text-sm md:text-base bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
-              #INCLUDE &lt;MUDANÇA&gt;
+              #CAENC
             </span>
           </Link>
           <nav className="hidden md:flex gap-6">
@@ -82,7 +91,7 @@ export function SiteHeader() {
                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                   <Code className="h-6 w-6 text-blue-500" />
                   <span className="inline-block font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-400">
-                    #INCLUDE &lt;MUDANÇA&gt;
+                    #CAENC
                   </span>
                 </Link>
               </div>

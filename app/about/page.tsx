@@ -3,7 +3,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 
 export const metadata = {
   title: "Sobre Nós",
-  description: "Conheça a chapa #Include <Mudança>.",
+  description: "Conheça o #CAENC.",
 }
 
 export default function AboutPage() {
@@ -11,27 +11,27 @@ export default function AboutPage() {
     <div className="container px-4 py-8 md:px-6 md:py-12 lg:py-24">
       <div className="mx-auto max-w-5xl space-y-8 md:space-y-12">
         <div className="space-y-3 md:space-y-4 text-center">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Nossa Chapa</h1>
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Nossa Equipe</h1>
           <p className="text-sm md:text-base lg:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Conheça a chapa #Include &lt;Mudança&gt; e nossa visão para o futuro.
+            Conheça o #CAENC e nossa visão para o futuro.
           </p>
         </div>
 
         <div className="space-y-6 md:space-y-8">
-          <div className="relative aspect-video overflow-hidden rounded-lg shadow-xl">
+          <div className="relative aspect-[2/1] max-w-3xl mx-auto overflow-hidden rounded-lg shadow-xl bg-blue-500/5">
             <Image
-              src="/logo-about.png"
-              alt="Chapa #Include <Mudança>"
+              src="/CAENC LOGO.png"
+              alt="#CAENC"
               fill
-              className="object-cover"
+              className="object-contain p-8"
+              priority
             />
           </div>
           <div className="space-y-4 bg-card p-6 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">#Include &lt;Mudança&gt;</h2>
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">#CAENC</h2>
             <p className="text-muted-foreground">
-              A chapa #Include &lt;Mudança&gt; representa uma visão coletiva para o futuro do Centro Acadêmico de
-              Engenharia de Computação. Nosso nome, que combina a diretiva include do C++ com a palavra "mudança",
-              reflete nosso compromisso com a inclusividade e a transformação na educação em engenharia de computação.
+              O #CAENC representa uma visão coletiva para o futuro do Centro Acadêmico de
+              Engenharia de Computação. Nosso compromisso é com a inclusividade e a transformação na educação em engenharia de computação.
             </p>
             <p className="text-muted-foreground">
               Acreditamos que a educação em engenharia de computação deve ser acessível a todos, independentemente de
@@ -41,7 +41,7 @@ export default function AboutPage() {
               enfrentar desafios do mundo real.
             </p>
             <p className="text-muted-foreground">
-              Nossa chapa é composta por estudantes dedicados que são apaixonados por engenharia de computação e
+              Nossa equipe é composta por estudantes dedicados que são apaixonados por engenharia de computação e
               comprometidos em servir à comunidade estudantil. Trazemos perspectivas, experiências e habilidades
               diversas para a mesa, unidos por nossa visão compartilhada de um centro acadêmico mais inclusivo e
               inovador.
